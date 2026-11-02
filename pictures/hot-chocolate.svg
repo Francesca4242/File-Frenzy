@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-labelledby="t">
+  <title id="t">A steaming mug of hot chocolate</title>
+  <!-- steam -->
+  <g fill="none" stroke="#cfe9dc" stroke-width="6" stroke-linecap="round" opacity=".85">
+    <path d="M70 62c-12-14 12-20 0-36"/>
+    <path d="M100 58c-12-14 12-20 0-36"/>
+    <path d="M130 62c-12-14 12-20 0-36"/>
+  </g>
+  <!-- handle -->
+  <path d="M152 100c30 0 30 50 0 50" fill="none" stroke="#2fae6a" stroke-width="14" stroke-linecap="round"/>
+  <!-- mug -->
+  <path d="M42 82h116l-10 92a12 12 0 0 1-12 10H64a12 12 0 0 1-12-10z" fill="#3dd47f"/>
+  <ellipse cx="100" cy="82" rx="58" ry="12" fill="#2fae6a"/>
+  <ellipse cx="100" cy="84" rx="50" ry="8" fill="#6b3a1f"/>
+  <!-- marshmallow -->
+  <rect x="104" y="72" width="22" height="14" rx="4" fill="#fff4f7" transform="rotate(-8 115 79)"/>
+  <!-- binary pattern on the mug -->
+  <text x="100" y="140" font-family="Courier New, monospace" font-size="16" font-weight="bold" text-anchor="middle" fill="#0b3b22">01001000</text>
+  <text x="100" y="160" font-family="Courier New, monospace" font-size="16" font-weight="bold" text-anchor="middle" fill="#0b3b22">01001001</text>
+</svg>

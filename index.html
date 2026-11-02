@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>File Frenzy</title>
+<meta name="description" content="An interactive fiction game about file format identification and the dire consequences of getting it wrong.">
+<link rel="icon" href="pictures/hot-chocolate.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/opendyslexic@5.2.5/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/opendyslexic@5.2.5/700.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#story">Skip to the story</a>
+
+<header class="toolbar" role="banner">
+  <p class="game-name"><span aria-hidden="true">✦ </span>File Frenzy</p>
+  <nav aria-label="Game controls">
+    <ul class="toolbar-buttons">
+      <li><button type="button" id="btn-back" disabled><span aria-hidden="true">← </span>Back</button></li>
+      <li><button type="button" id="btn-notebook" aria-haspopup="dialog"><span aria-hidden="true">📓 </span>Notebook <span id="notebook-count" class="badge">0</span></button></li>
+      <li><button type="button" id="btn-learn" aria-haspopup="dialog"><span aria-hidden="true">🔗 </span>Learn more</button></li>
+      <li><button type="button" id="btn-settings" aria-haspopup="dialog"><span aria-hidden="true">⚙ </span>Settings</button></li>
+      <li><button type="button" id="btn-help" aria-haspopup="dialog"><span aria-hidden="true">? </span>Help</button></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="story" class="story" tabindex="-1">
+  <noscript>
+    <p>File Frenzy is a choose-your-own-adventure game and needs JavaScript switched on to play.</p>
+  </noscript>
+</main>
+
+<div id="announcer" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+
+<!-- Notebook -->
+<dialog id="dlg-notebook" aria-labelledby="dlg-notebook-title">
+  <div class="dialog-head">
+    <h2 id="dlg-notebook-title">Your research notebook</h2>
+    <button type="button" class="close" data-close aria-label="Close notebook">✕</button>
+  </div>
+  <div id="notebook-body"></div>
+</dialog>
+
+<!-- Resources -->
+<dialog id="dlg-learn" aria-labelledby="dlg-learn-title">
+  <div class="dialog-head">
+    <h2 id="dlg-learn-title">Learn more about file formats</h2>
+    <button type="button" class="close" data-close aria-label="Close learn more">✕</button>
+  </div>
+  <div id="learn-body"></div>
+</dialog>
+
+<!-- Settings -->
+<dialog id="dlg-settings" aria-labelledby="dlg-settings-title">
+  <div class="dialog-head">
+    <h2 id="dlg-settings-title">Reading settings</h2>
+    <button type="button" class="close" data-close aria-label="Close settings">✕</button>
+  </div>
+  <form id="settings-form" class="settings" onsubmit="return false">
+    <fieldset>
+      <legend>Colours</legend>
+      <label><input type="radio" name="theme" value="classic"> Classic glow (dark)</label>
+      <label><input type="radio" name="theme" value="paper"> Paper (light)</label>
+      <label><input type="radio" name="theme" value="contrast"> High contrast</label>
+      <label><input type="radio" name="theme" value="cream"> Soft cream (low glare)</label>
+    </fieldset>
+    <fieldset>
+      <legend>Font</legend>
+      <label><input type="radio" name="font" value="classic"> Classic serif</label>
+      <label><input type="radio" name="font" value="easy"> Easy-read (Atkinson Hyperlegible)</label>
+      <label><input type="radio" name="font" value="dyslexic"> OpenDyslexic</label>
+    </fieldset>
+    <fieldset>
+      <legend>Text size</legend>
+      <label><input type="radio" name="size" value="s"> Small</label>
+      <label><input type="radio" name="size" value="m"> Medium</label>
+      <label><input type="radio" name="size" value="l"> Large</label>
+      <label><input type="radio" name="size" value="xl"> Extra large</label>
+    </fieldset>
+    <fieldset>
+      <legend>Spacing</legend>
+      <label><input type="radio" name="spacing" value="normal"> Normal</label>
+      <label><input type="radio" name="spacing" value="roomy"> Roomy (more space between lines and letters)</label>
+    </fieldset>
+    <fieldset>
+      <legend>Extras</legend>
+      <label><input type="checkbox" name="motion"> Reduce animation</label>
+      <label><input type="checkbox" name="pictures" checked> Show pictures</label>
+      <label id="tts-setting"><input type="checkbox" name="tts"> Show “Read aloud” button</label>
+    </fieldset>
+    <p class="small">Settings are remembered on this device.</p>
+  </form>
+</dialog>
+
+<!-- Help -->
+<dialog id="dlg-help" aria-labelledby="dlg-help-title">
+  <div class="dialog-head">
+    <h2 id="dlg-help-title">How to play</h2>
+    <button type="button" class="close" data-close aria-label="Close help">✕</button>
+  </div>
+  <div class="help">
+    <p>File Frenzy is a choose-your-own-adventure story. Read each page, then pick what happens next.</p>
+    <ul>
+      <li><strong>Choices</strong> are buttons. Click or tap them, or press <kbd>Tab</kbd> to move between them and <kbd>Enter</kbd> to choose. You can also press the number keys <kbd>1</kbd>–<kbd>9</kbd> to pick a choice.</li>
+      <li><strong>Questions</strong>: if you get one wrong, you’ll get a hint and can try again. No one is keeping score!</li>
+      <li><strong>“But why?!”</strong> links lead to short lessons. Read them, then press <em>Back</em> to carry on.</li>
+      <li><strong>Notebook</strong>: every lesson you find is saved in your notebook, so you can read it again any time.</li>
+      <li><strong>Back</strong> takes you to the previous page. Press <kbd>Backspace</kbd> or <kbd>B</kbd> as a shortcut.</li>
+      <li><strong>Settings</strong> let you change colours, font, text size and spacing, and turn on read aloud.</li>
+    </ul>
+    <p>One puzzle uses the <a href="https://pronom.nationalarchives.gov.uk/" target="_blank" rel="noopener">PRONOM website<span class="visually-hidden"> (opens in a new tab)</span></a>. If you can’t get online, there’s a button that shows you the answers.</p>
+    <p>Your progress is saved automatically on this device.</p>
+    <p><button type="button" id="btn-restart" class="secondary">Start again from the beginning</button></p>
+  </div>
+</dialog>
+
+<script src="js/story.js"></script>
+<script src="js/engine.js"></script>
+</body>
+</html>

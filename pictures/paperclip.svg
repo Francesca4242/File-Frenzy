@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 240" role="img" aria-labelledby="t">
+  <title id="t">A friendly rusty paperclip with a light bulb</title>
+  <!-- light bulb -->
+  <g transform="translate(80 30)">
+    <circle r="22" fill="#ffe46b" opacity=".35"/>
+    <path d="M0-16a13 13 0 0 1 8 23v5h-16v-5A13 13 0 0 1 0-16z" fill="#ffe46b" stroke="#b08a00" stroke-width="2"/>
+    <rect x="-7" y="13" width="14" height="6" rx="2" fill="#9aa0a6"/>
+  </g>
+  <!-- paperclip wire -->
+  <path d="M60 200V96a20 20 0 0 1 40 0v96a32 32 0 0 1-64 0V84a44 44 0 0 1 88 0v100" fill="none" stroke="#b9c0c8" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- rust spots -->
+  <g fill="#b5622c" opacity=".85">
+    <circle cx="36" cy="150" r="4"/><circle cx="124" cy="120" r="3.5"/><circle cx="100" cy="170" r="3"/><circle cx="60" cy="186" r="3"/>
+  </g>
+  <!-- eyes -->
+  <ellipse cx="62" cy="88" rx="13" ry="16" fill="#fff" stroke="#333" stroke-width="2"/>
+  <ellipse cx="98" cy="88" rx="13" ry="16" fill="#fff" stroke="#333" stroke-width="2"/>
+  <circle cx="65" cy="92" r="6" fill="#1b1b1f"/>
+  <circle cx="101" cy="92" r="6" fill="#1b1b1f"/>
+  <circle cx="67" cy="89" r="2" fill="#fff"/>
+  <circle cx="103" cy="89" r="2" fill="#fff"/>
+  <path d="M52 66q10-6 20 0M88 66q10-6 20 0" fill="none" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+  <!-- feet -->
+  <ellipse cx="52" cy="226" rx="16" ry="7" fill="#9aa0a6"/>
+  <ellipse cx="112" cy="226" rx="16" ry="7" fill="#9aa0a6"/>
+  <path d="M60 200v20M124 184v36" stroke="#b9c0c8" stroke-width="6" stroke-linecap="round"/>
+</svg>
